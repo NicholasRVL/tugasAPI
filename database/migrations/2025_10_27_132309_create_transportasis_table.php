@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('transportasis', function (Blueprint $table) {
             $table->id();
+            $table->string('kode', 10);
+            $table->string('nama', 50);
+            $table->string('jenis', 50);
+            $table->integer('kapasitas');
             $table->timestamps();
         });
     }

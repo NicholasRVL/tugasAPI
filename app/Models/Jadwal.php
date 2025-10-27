@@ -9,4 +9,11 @@ class Jadwal extends Model
 {
     /** @use HasFactory<\Database\Factories\JadwalFactory> */
     use HasFactory;
+
+    protected $fillable = ['kode', 'asal', 'tujuan', 'transportasi_id'];
+
+    public function transportasi()
+    {
+        return $this->belongsTo(Transportasi::class, 'transportasi_id');
+    }
 }
