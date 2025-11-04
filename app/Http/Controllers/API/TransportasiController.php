@@ -91,7 +91,7 @@ class TransportasiController extends Controller
         }
     }
 
-    public function destroy(string $id)
+    public function destroy($id)
     {
         $transportasi = Transportasi::find($id);
 
