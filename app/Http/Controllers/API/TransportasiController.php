@@ -46,16 +46,16 @@ class TransportasiController extends Controller
     {
         $transportasi = Transportasi::find($id);
 
-        if ($transportasi->isEmpty()) {
+        if (!$transportasi) {
             return response()->json([
                 'success' => false,
-                'message' => 'Tidak ada fakultas yang ditemukan.'
+                'message' => 'Tidak ada transportasi yang ditemukan.'
             ], Response::HTTP_NOT_FOUND);
         }
 
         return response()->json([
             'success' => true,
-            'message' => 'Fakultas ditemukan.',
+            'message' => 'Transportasi ditemukan.',
             'data' => $transportasi
         ], Response::HTTP_OK);
     }
