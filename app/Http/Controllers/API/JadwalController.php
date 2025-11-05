@@ -90,10 +90,10 @@ class JadwalController extends Controller
 
     public function destroy(string $id)
     {
-         $transportasi = Transportasi::find($id);
+         $jadwal = Jadwal::find($id);
 
-         if($transportasi){
-            $transportasi->delete();
+         if($jadwal){
+            $jadwal->delete();
             $data['success'] = true;
             $data['message'] = "Data Transportasi berhasil dihapus";
             return response()->json($data, Response::HTTP_OK);
