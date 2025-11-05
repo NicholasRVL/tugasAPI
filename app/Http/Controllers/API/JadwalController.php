@@ -90,7 +90,7 @@ class JadwalController extends Controller
     public function destroy(string $id)
     {
          
-         $jadwal = Jadwal::all();
+         $jadwal = Jadwal::find($id);
 
          if($jadwal){
             $jadwal->delete();
