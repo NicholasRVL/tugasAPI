@@ -70,17 +70,17 @@ class JadwalController extends Controller
                 
             ]
             );
+         }
 
-        Jadwal::where('id', $id)->update($validate);
+       $jadwal->update($validate);
        
         if($jadwal){
             $data['success'] = true;
             $data['message'] = "Data Jadwal berhasil diperbarui";
             $data['data'] = $jadwal;
             return response()->json($data, 200);
-            };
-
-        }else{
+            }
+            else{
             $data['success'] = false;
             $data['message'] = "Data Jadwal tidak di temukan";
             return response()->json($data, 200);
