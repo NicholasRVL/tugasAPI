@@ -95,11 +95,11 @@ class JadwalController extends Controller
          if($jadwal){
             $jadwal->delete();
             $data['success'] = true;
-            $data['message'] = "Data Transportasi berhasil dihapus";
+            $data['message'] = "Data Jadwal berhasil dihapus";
             return response()->json($data, Response::HTTP_OK);
         }else{
             $data['success'] = false;
-            $data['message'] = "Data Transportasi tidak di temukan";
+            $data['message'] = "Data Jadwal tidak di temukan";
             return response()->json($data, Response::HTTP_NOT_FOUND);
         }
     }
