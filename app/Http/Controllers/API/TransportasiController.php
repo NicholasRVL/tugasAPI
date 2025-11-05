@@ -78,7 +78,7 @@ class TransportasiController extends Controller
             );
          }
 
-        Transportasi::where('id', $id)->update($validate);
+         $transportasi->update($validate);
        
         if($transportasi){
             $data['success'] = true;
