@@ -15,7 +15,7 @@ class JadwalController extends Controller
      */
     public function index()
     {
-         $jadwal = Jadwal::with('transportasi')->get();;
+         $jadwal = Jadwal::all();
         return response()->json($jadwal, 200);
     }
 
@@ -67,7 +67,6 @@ class JadwalController extends Controller
             [
                 'asal' => 'required',
                 'tujuan' => 'required',
-                'transportasi_id' => 'required|exists:transportasis,id'
                 
             ]
             );
@@ -90,7 +89,8 @@ class JadwalController extends Controller
 
     public function destroy(string $id)
     {
-         $jadwal = Jadwal::find($id);
+         
+         $jadwal = Jadwal::all();
 
          if($jadwal){
             $jadwal->delete();

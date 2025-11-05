@@ -14,7 +14,7 @@ class TransportasiController extends Controller
      */
     public function index()
     {
-        $transportasi = Transportasi::all();
+        $transportasi = Transportasi::with('jadwal')->get();
         return response()->json($transportasi, 200);
     }
 
@@ -28,7 +28,8 @@ class TransportasiController extends Controller
                 'kode' => 'required|unique:transportasis',
                 'nama' => 'required',
                 'jenis' => 'required',
-                'kapasitas' => 'required|numeric'
+                'kapasitas' => 'required|numeric',
+                'jadwal_id' =>  'required|exists:jadwals,id'
             ]
         );
 
@@ -43,7 +44,7 @@ class TransportasiController extends Controller
 
      public function show(string $id)
     {
-        $transportasi = Transportasi::all();
+        $transportasi = Transportasi::find($id);
 
         if ($transportasi->isEmpty()) {
             return response()->json([
