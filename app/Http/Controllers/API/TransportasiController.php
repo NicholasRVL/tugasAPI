@@ -76,6 +76,7 @@ class TransportasiController extends Controller
                 
             ]
             );
+         }
 
         Transportasi::where('id', $id)->update($validate);
        
@@ -84,9 +85,8 @@ class TransportasiController extends Controller
             $data['message'] = "Data Transportasi berhasil diperbarui";
             $data['data'] = $transportasi;
             return response()->json($data, 200);
-            };
-
-        }else{
+            }
+            else{
             $data['success'] = false;
             $data['message'] = "Data Transportasi tidak di temukan";
             return response()->json($data, 200);
