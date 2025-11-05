@@ -70,7 +70,8 @@ class TransportasiController extends Controller
             [
                 'nama' => 'required',
                 'jenis' => 'required',
-                'kapasitas' => 'required|numeric'
+                'kapasitas' => 'required|numeric',
+                'jadwal_id' => 'required|exists:jadwals,id'
                 
             ]
             );

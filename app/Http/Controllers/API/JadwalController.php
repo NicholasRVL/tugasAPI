@@ -29,7 +29,7 @@ class JadwalController extends Controller
                 'kode' => 'required|unique:jadwals',
                 'asal' => 'required',
                 'tujuan' => 'required',
-                'transportasi_id' => 'required|exists:transportasis,id'
+                
             ]
         );
 

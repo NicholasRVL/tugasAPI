@@ -10,11 +10,13 @@ class Transportasi extends Model
     /** @use HasFactory<\Database\Factories\TransportasiFactory> */
     use HasFactory;
 
-    protected $fillable = ['kode','nama', 'jenis', 'kapasitas'];
+    protected $fillable = ['kode','nama', 'jenis', 'kapasitas', 'jadwal_id'];
 
     public function jadwal()
     {
-        return $this->hasMany(Jadwal::class, 'transportasi_id');
+        
+        return $this->belongsTo(Jadwal::class, 'jadwal_id');
+
     }
     
 }

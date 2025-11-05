@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama', 50);
             $table->string('jenis', 50);
             $table->integer('kapasitas');
+            $table->foreignId('jadwal_id')->constrained();
             $table->timestamps();
         });
     }
